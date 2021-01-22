@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tetris =_=</title>
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/control.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="interface tetramino">
+        <div>Next tetramino</div>
+        <div class="nextTetramino"></div>
+      </div>
+      <div class="tetris"></div>
+      <div class="state">
+        <div class="interface">
+          <div>SCORE</div>
+          <div class="score">0</div>
+        </div>
+        <div class="interface control">
+          <div class="pause"></div>
+          <div class="restart"></div>
+        </div>
+      </div>
+    </div>
+    <div class="settings">
+      <h3
+        onclick="document.getElementsByTagName('nav')[0].className = 'menu_active'"
+      >
+        &lt;settings/&gt;
+      </h3>
+      <nav>
+        <p onclick="document.getElementsByTagName('nav')[0].className = ''">
+          &lt;close/&gt;
+        </p>
+        <ol>
+          <li>
+            <a>Settings</a>
+            <ol>
+              <li><a>Width</a> <input id="width" value="10" /></li>
+              <li><a>Height</a> <input id="height" value="20" /></li>
+              <li><a>Node px size</a> <input id="pxSize" value="40" /></li>
+            </ol>
+            <div class="btn">apply</div>
+          </li>
+        </ol>
+      </nav>
+      <!-- <div class="width">
+        <div>Screen width</div>
+        <input id="width" type="text" />
+      </div>
+      <div class="height">
+        <div>Screen height</div>
+        <input id="height" type="text" />
+      </div>
+      <div class="pxSize">
+        <div>Node pixel size</div>
+        <input id="pxSize" type="text" />
+      </div>
+      <button id="apply">apply</button> -->
+    </div>
+  </body>
+  <script src="./js/game.js"></script>
+  <script src="./js/index.js"></script>
+</html>
