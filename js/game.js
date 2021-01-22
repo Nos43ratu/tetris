@@ -1,5 +1,27 @@
-const startGame = () => {
+const startGame = (width, height, pxSize) => {
   let pause = false;
+  const game = document.querySelector(".game");
+  if (game.firstChild) {
+    game.removeChild(game.firstChild);
+  }
+  const tetris = document.createElement("div");
+  tetris.style.backgroundColor = "black";
+  tetris.style.border = "2px solid #0f66ac";
+  tetris.style.width = width * pxSize + "px";
+  tetris.style.height = height * pxSize + "px";
+  for (let y = 0; y < height; y++) {
+    for (let x = 0; x < width; x++) {
+      let node = document.createElement("div");
+      node.classList.add("node");
+      node.style.backgroundColor = "";
+      node.style.width = pxSize + "px";
+      node.style.height = pxSize + "px";
+      node.style.float = "left";
+      node.setAttribute("id", +y + "-" + x);
+      tetris.appendChild(node);
+    }
+  }
+  game.appendChild(tetris);
   document.querySelector(".pause").onclick = () => {
     pause = !pause;
   };
