@@ -19,13 +19,13 @@ const startGame = (width, height, pxSize, speed) => {
     score: 0,
   };
   createNextTetramino();
-  updateScore(0);
 
   let next = getRandomTetramino();
+  fillNextTetramino(next);
 
   const draw = () => {
-    for (let y = 0; y < 20; y++) {
-      for (let x = 0; x < 10; x++) {
+    for (let y = 0; y < height; y++) {
+      for (let x = 0; x < width; x++) {
         let node = document.getElementById(+y + "-" + x);
         node.style.backgroundColor = "";
       }
@@ -58,7 +58,7 @@ const startGame = (width, height, pxSize, speed) => {
         gameMatrix.unshift(row);
         ++y;
 
-        player.score += rowCount * 10;
+        player.score += rowCount * 500;
         rowCount *= 2;
       }
       updateScore(player.score);
