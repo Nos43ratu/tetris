@@ -36,7 +36,7 @@ body {
 }
 .nextTetramino {
   height: 100px;
-  width: 180px;
+  width: 160px;
 }
 .state {
   color: white;
