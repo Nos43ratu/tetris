@@ -6,9 +6,29 @@ const startGame = (width, height, pxSize, speed) => {
     pause = !pause;
   };
   document.querySelector(".restart").onclick = () => {
+    clearInterval(interval)
     cancelAnimationFrame(animationRef)
     startGame(width, height, pxSize, speed);
   };
+let interval
+  const StartTimer=()=>{
+  const timerContainer=document.querySelector(".time")
+    let timer = 300, minutes, seconds;
+    interval=setInterval( ()=>{
+      minutes = parseInt(timer / 60, 10);
+      seconds = parseInt(timer % 60, 10);
+
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+
+      timerContainer.innerHTML = minutes + ":" + seconds;
+
+      if (--timer < 0) {
+        timer = 300;
+      }
+    }, 1000);
+  }
+  StartTimer()
 
   const gameMatrix = new Array(height)
     .fill(0)
