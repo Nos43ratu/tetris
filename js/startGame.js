@@ -1,11 +1,12 @@
 const startGame = (width, height, pxSize, speed) => {
   let pause = false;
   makeGame(width, height, pxSize);
-
+  let animationRef
   document.querySelector(".pause").onclick = () => {
     pause = !pause;
   };
   document.querySelector(".restart").onclick = () => {
+    cancelAnimationFrame(animationRef)
     startGame(width, height, pxSize, speed);
   };
 
@@ -90,7 +91,7 @@ const startGame = (width, height, pxSize, speed) => {
       }
       draw();
     }
-    requestAnimationFrame(update);
+    animationRef=requestAnimationFrame(update);
   };
   //KEYBOARD CONTOLL HANDLER
   document.addEventListener("keydown", (event) => {

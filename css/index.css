@@ -55,6 +55,8 @@ body {
   width: 50px;
   height: 50px;
   background-color: tomato;
+  background: url(./pause.png) no-repeat;
+  background-size:contain;
   cursor: pointer;
 }
 .restart {
@@ -63,7 +65,6 @@ body {
   background: url(./pngegg.png) no-repeat;
   background-size: contain;
   cursor: pointer;
-  background-color: tomato;
 }
 .node {
   border: 1px solid #1d3f6c61;
